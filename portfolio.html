@@ -413,6 +413,139 @@
             font-size: .9rem;
         }
 
+
+        /* Project 2 visuals */
+        .project-two {
+            background:
+                radial-gradient(circle at 92% 7%, #eef9ff 0, transparent 28%),
+                white;
+        }
+
+        .intent-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            margin: 32px 0 46px;
+            overflow-x: auto;
+            padding: 4px 2px 12px;
+        }
+
+        .flow-card {
+            min-width: 128px;
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #d9ebf7;
+            border-radius: 13px;
+            background: #f8fcff;
+            box-shadow: 0 7px 20px rgba(53,119,168,.06);
+        }
+
+        .flow-card span {
+            display: block;
+            color: #78afe0;
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            margin-bottom: 7px;
+        }
+
+        .flow-card strong {
+            display: block;
+            font-size: .79rem;
+            color: #356f99;
+            line-height: 1.3;
+        }
+
+        .flow-card small {
+            display: block;
+            color: #718493;
+            font-size: .68rem;
+            line-height: 1.45;
+            margin-top: 6px;
+        }
+
+        .flow-arrow {
+            align-self: center;
+            color: #91c1e4;
+            font-size: 1.15rem;
+            flex: 0 0 auto;
+        }
+
+        .hci-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+            margin-top: 25px;
+        }
+
+        .hci-cards > div {
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #f8fcff, #edf7ff);
+            border: 1px solid #d9ebf7;
+        }
+
+        .hci-cards span {
+            display: inline-block;
+            color: #72afe0;
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+
+        .hci-cards h4 {
+            margin: 7px 0 5px;
+            color: #2f6f9d;
+            font-size: .98rem;
+        }
+
+        .hci-cards p {
+            margin: 0;
+            font-size: .88rem;
+        }
+
+        @media (max-width: 600px) {
+            .hci-cards { grid-template-columns: 1fr; }
+            .intent-flow { margin-left: -2px; margin-right: -2px; }
+        }
+
+
+        .loop-caption {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 17px;
+            padding-top: 14px;
+            border-top: 1px dashed #cfe5f4;
+            color: #5c819c;
+            font-size: .78rem;
+            text-align: center;
+        }
+
+        .loop-caption span {
+            color: #5fa2d7;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .flow-highlight {
+            background: linear-gradient(145deg, #f0f9ff, #e5f4ff);
+            border-color: #c4e2f5;
+        }
+
+        .flow-highlight strong {
+            color: #2d6f9e;
+        }
+
+        .hci-cards > div:last-child {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 600px) {
+            .hci-cards > div:last-child { grid-column: auto; }
+        }
+
         @media (max-width: 800px) {
             .hero {
                 padding-top: 58px;
@@ -653,6 +786,206 @@
                     This is an ongoing research project. Detailed study materials,
                     participant data, unpublished findings, and other research
                     artifacts are not included here.
+                </p>
+            </article>
+
+            <article class="project project-two">
+                <div class="eyebrow">Industry Research · Microsoft Research</div>
+                <h2>Designing Accessible Interactions for Complex Developer Tools</h2>
+
+                <p>
+                    Exploring a more accessible way for users to interact with
+                    complex developer tooling by allowing them to express their
+                    intent in natural language and work with the resulting workflow
+                    through an interactive interface.
+                </p>
+
+
+                <div>
+                    <span class="tag">HCI</span>
+                    <span class="tag">Interaction Design</span>
+                    <span class="tag">Human-AI Interaction</span>
+                    <span class="tag">Developer Tools</span>
+                    <span class="tag">Software Engineering</span>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h3>The challenge</h3>
+                        <p>
+                            A powerful framework for large-scale code transformations
+                            required users to work directly with many abstractions,
+                            parameters, and workflow components, creating a barrier
+                            to entry.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>The approach</h3>
+                        <p>
+                            We explored an interaction model where users could begin
+                            with their intent rather than first learning the
+                            underlying abstractions required to construct a workflow.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>My contribution</h3>
+                        <p>
+                            I designed and implemented the interface for generating,
+                            presenting, configuring, and executing workflows through
+                            a more accessible interaction model.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="research-map" aria-label="Interaction flow">
+                    <div class="map-title">Interaction flow</div>
+                    <div class="map">
+                        <div class="map-step">
+                            <div class="map-circle">01</div>
+                            <strong>Intent</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">02</div>
+                            <strong>Generate</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">03</div>
+                            <strong>Review</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">04</div>
+                            <strong>Execute</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">↻</div>
+                            <strong>Iterate</strong>
+                        </div>
+                    </div>
+                    <div class="loop-caption">
+                        <span>↻</span>
+                        Tweak runtime parameters or continue chatting to refine the workflow
+                    </div>
+                </div>
+
+                <h3>The challenge</h3>
+                <p>
+                    A powerful framework for performing large-scale code transformations
+                    required users to work directly with a complex set of abstractions
+                    and configuration parameters. Creating a workflow required
+                    understanding how these components fit together before users could
+                    accomplish their actual task.
+                </p>
+
+                <p class="note">
+                    The problem wasn't the capability of the system — it was the
+                    interaction barrier between the user and that capability.
+                </p>
+
+                <h3>The approach</h3>
+                <p>
+                    We explored a more accessible interaction model that allowed
+                    users to begin with their <strong>intent</strong>, rather than
+                    requiring them to understand the underlying abstractions.
+                </p>
+
+                <p>
+                    The interface also supported an iterative interaction loop:
+                    users could generate a workflow, execute it, adjust runtime
+                    parameters, and continue chatting to refine the workflow or
+                    make changes. Direct actions within the chat interface made
+                    common operations such as <strong>executing the workflow and
+                    tweaking runtime parameters</strong> accessible without
+                    requiring users to navigate through the underlying system.
+                </p>
+
+                <div class="intent-flow">
+                    <div class="flow-card">
+                        <span>01</span>
+                        <strong>User intent</strong>
+                        <small>What does the user want to accomplish?</small>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-card">
+                        <span>02</span>
+                        <strong>Natural-language input</strong>
+                        <small>Express the task in familiar language.</small>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-card">
+                        <span>03</span>
+                        <strong>Generated workflow</strong>
+                        <small>Translate intent into structured actions.</small>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-card">
+                        <span>04</span>
+                        <strong>Review + configure</strong>
+                        <small>Inspect and provide required parameters.</small>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-card flow-highlight">
+                        <span>05</span>
+                        <strong>Execute from chat</strong>
+                        <small>Run the workflow directly from the conversation.</small>
+                    </div>
+                    <div class="flow-arrow">↻</div>
+                    <div class="flow-card flow-highlight">
+                        <span>06</span>
+                        <strong>Tweak + continue</strong>
+                        <small>Adjust runtime parameters or keep chatting to iterate.</small>
+                    </div>
+                </div>
+
+                <h3>What I worked on</h3>
+                <ul>
+                    <li>Designed the interaction for expressing transformation intent through natural language.</li>
+                    <li>Developed the interface for presenting generated workflows.</li>
+                    <li>Designed ways for users to provide and modify required parameters.</li>
+                    <li>Implemented the interface and underlying functionality.</li>
+                    <li>Added direct actions to the chat interface for executing workflows and modifying runtime parameters.</li>
+                    <li>Enabled users to iteratively refine their workflow through conversation and continue execution without leaving the interface.</li>
+                </ul>
+
+                <h3>HCI perspective</h3>
+                <div class="hci-cards">
+                    <div>
+                        <span>01</span>
+                        <h4>Cognitive Load</h4>
+                        <p>Reduce the amount of system knowledge required upfront.</p>
+                    </div>
+                    <div>
+                        <span>02</span>
+                        <h4>Mental Models</h4>
+                        <p>Let users express what they want rather than how the system works internally.</p>
+                    </div>
+                    <div>
+                        <span>03</span>
+                        <h4>Human-AI Interaction</h4>
+                        <p>Translate natural-language intent into a structured, inspectable workflow while allowing users to iteratively refine the result through conversation.</p>
+                    </div>
+                    <div>
+                        <span>04</span>
+                        <h4>Iterative Interaction</h4>
+                        <p>Allow users to execute, inspect, tweak runtime parameters, and continue making changes without repeatedly navigating between different interfaces.</p>
+                    </div>
+                    <div>
+                        <span>05</span>
+                        <h4>Usability</h4>
+                        <p>Make a powerful system accessible without hiding its underlying capabilities.</p>
+                    </div>
+                </div>
+
+                <p class="note">
+                    This project was conducted as part of my work at Microsoft Research.
+                    Because the work involved internal systems and unpublished research,
+                    specific project names, implementation details, and other proprietary
+                    information are intentionally omitted.
                 </p>
             </article>
         </section>
