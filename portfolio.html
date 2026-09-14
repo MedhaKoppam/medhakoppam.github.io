@@ -6,118 +6,461 @@
     <title>UX Research Portfolio · Medha Koppam</title>
 
     <style>
+        :root {
+            --blue: #78b9ea;
+            --blue-dark: #347db8;
+            --blue-deep: #215f91;
+            --blue-soft: #eaf6ff;
+            --blue-pale: #f6fbff;
+            --ink: #17212b;
+            --muted: #596674;
+            --line: #d7e9f7;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            background: #fafafa;
-            color: #1a1a1a;
+            background: #fbfdff;
+            color: var(--ink);
             line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: #dff1ff;
+            filter: blur(70px);
+            opacity: .55;
+            top: -220px;
+            right: -130px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        ::selection {
+            background: #cbe9ff;
+            color: var(--ink);
         }
 
         .nav {
-            max-width: 900px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 24px 24px 0;
+            padding: 24px 28px 0;
+            position: relative;
+            z-index: 10;
         }
 
         .nav a {
-            color: #0056d6;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue-deep);
             text-decoration: none;
+            font-weight: 650;
+            padding: 9px 13px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.72);
+            border: 1px solid rgba(215,233,247,.9);
+            box-shadow: 0 5px 18px rgba(40,100,145,.06);
+            transition: .2s ease;
+        }
+
+        .nav a:hover {
+            transform: translateX(-3px);
+            background: white;
         }
 
         .hero, main {
-            max-width: 900px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
         }
 
         .hero {
-            padding-top: 70px;
-            padding-bottom: 60px;
+            min-height: auto;
+            padding-top: 82px;
+            padding-bottom: 70px;
+            position: relative;
         }
 
+        .hero-copy { position: relative; z-index: 2; }
+
         .eyebrow {
-            color: #0056d6;
-            font-weight: 600;
-            letter-spacing: .03em;
+            color: var(--blue-dark);
+            font-weight: 750;
+            letter-spacing: .1em;
             text-transform: uppercase;
-            font-size: .82rem;
+            font-size: .76rem;
         }
 
         h1 {
-            font-size: clamp(2.4rem, 6vw, 4.4rem);
-            line-height: 1.05;
-            margin: 12px 0 20px;
-            font-weight: 650;
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            line-height: 1.01;
+            letter-spacing: -.055em;
+            margin: 15px 0 25px;
+            font-weight: 720;
             max-width: 800px;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 0;
-        }
-
-        h3 {
-            margin-bottom: 8px;
-        }
-
         .intro {
-            font-size: 1.2rem;
-            max-width: 720px;
-            color: #444;
+            font-size: 1.12rem;
+            line-height: 1.82;
+            max-width: 730px;
+            color: var(--muted);
+        }
+
+        .intro strong { color: var(--ink); }
+
+        /* Small research graphic */
+        .research-graphic {
+            margin-top: 34px;
+            max-width: 760px;
+            padding: 18px 0 6px;
+        }
+
+        .research-line {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: start;
+            gap: 10px;
+        }
+
+        .research-line::before {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            top: 25px;
+            height: 2px;
+            background: linear-gradient(90deg, #b9dcf5, #73b4e7, #b9dcf5);
+            z-index: 0;
+        }
+
+        .research-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .research-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #a9d3ef;
+            box-shadow: 0 8px 22px rgba(53,119,168,.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4d94c9;
+            font-size: 1.15rem;
+        }
+
+        .research-step strong {
+            display: block;
+            font-size: .77rem;
+            color: #4a7899;
+            font-weight: 700;
+        }
+
+        .research-step span {
+            display: block;
+            margin-top: 2px;
+            font-size: .67rem;
+            color: #8395a3;
+        }
+
+        .scroll-cue {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 28px;
+            color: #6b8498;
+            font-size: .82rem;
+        }
+
+        .scroll-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--blue);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px #e8f5ff;
+        }
+
+        /* Main content */
+        main { padding-bottom: 50px; }
+
+        main > section > h2 {
+            font-size: 2rem;
+            letter-spacing: -.035em;
+            margin: 0 0 24px;
         }
 
         .project {
+            position: relative;
+            overflow: hidden;
             background: white;
-            border: 1px solid #e4e4e4;
-            border-radius: 14px;
-            padding: 32px;
-            margin: 30px 0 70px;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 46px;
+            margin: 30px 0 78px;
+            box-shadow: 0 22px 70px rgba(39,92,129,.09);
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 7px;
+            background: linear-gradient(90deg, #68aee1, #a9d7f5 55%, #edf8ff);
+        }
+
+        .project::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: #f0f9ff;
+            right: -125px;
+            top: 70px;
+            pointer-events: none;
+        }
+
+        .project > * { position: relative; z-index: 1; }
+
+        .project > .eyebrow { margin-top: 0; }
+
+        .project h2 {
+            font-size: clamp(2rem, 4vw, 2.65rem);
+            letter-spacing: -.04em;
+            margin: 8px 0 12px;
+        }
+
+        .project > p:first-of-type {
+            font-size: 1.1rem;
+            color: #526170;
+            max-width: 740px;
         }
 
         .tag {
             display: inline-block;
-            font-size: .82rem;
-            padding: 5px 10px;
-            border: 1px solid #ddd;
+            font-size: .77rem;
+            padding: 6px 11px;
+            background: #f1f9ff;
+            border: 1px solid #cfe5f5;
             border-radius: 999px;
-            margin: 3px 5px 3px 0;
-            color: #555;
+            margin: 5px 5px 5px 0;
+            color: #39729f;
+            font-weight: 650;
+        }
+
+        /* Graphic divider for research design */
+        .research-map {
+            margin: 42px 0 48px;
+            padding: 25px 22px 20px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #f7fcff, #edf7ff);
+            border: 1px solid #d8ebf8;
+        }
+
+        .map-title {
+            color: #4b7899;
+            font-size: .72rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            font-weight: 750;
+            margin-bottom: 20px;
+        }
+
+        .map {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .map-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .map-circle {
+            width: 54px;
+            height: 54px;
+            margin: 0 auto 9px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #9bc9ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #397db8;
+            font-weight: 750;
+            box-shadow: 0 7px 18px rgba(55,126,176,.09);
+        }
+
+        .map-step strong {
+            display: block;
+            font-size: .74rem;
+            color: #416f8f;
+        }
+
+        .map-arrow {
+            color: #8dbddd;
+            font-size: 1.1rem;
+            margin-top: -23px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            margin: 30px 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 36px 0 46px;
         }
 
         .grid > div {
-            background: #f6f6f6;
-            border-radius: 10px;
-            padding: 18px;
+            background: linear-gradient(145deg, #f9fcff, #eef7ff);
+            border: 1px solid #d9ecf8;
+            border-radius: 15px;
+            padding: 22px;
+            transition: transform .2s ease, box-shadow .2s ease;
         }
 
+        .grid > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(54,119,166,.12);
+        }
+
+        .grid h3 {
+            margin: 0 0 9px;
+            color: #2f709f;
+            font-size: .76rem;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+        }
+
+        .grid p {
+            margin: 0;
+            font-size: .93rem;
+        }
+
+        .project h3:not(.grid h3) {
+            position: relative;
+            padding-top: 14px;
+            margin-top: 43px;
+        }
+
+        .project h3:not(.grid h3)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            border-radius: 5px;
+            background: #8fc4ea;
+        }
+
+        .project ul { padding-left: 23px; }
+        .project li { margin: 9px 0; }
+        .project li::marker { color: #72afe0; }
+
         .note {
-            border-left: 3px solid #0056d6;
-            padding-left: 18px;
-            color: #444;
+            border-left: 4px solid #82b9e8;
+            background: #f3faff;
+            border-radius: 0 13px 13px 0;
+            padding: 18px 21px;
+            margin: 28px 0;
+            color: #435361;
         }
 
         .back {
-            display: inline-block;
-            margin-top: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--blue-dark);
+            font-weight: 650;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #f1f9ff;
+            border: 1px solid #d6ebf8;
+            transition: .2s ease;
+        }
+
+        .back:hover {
+            transform: translateX(-4px);
+            background: #e7f5ff;
         }
 
         footer {
             text-align: center;
-            padding: 70px 24px 35px;
-            color: #666;
+            padding: 90px 24px 35px;
+            color: #71808d;
+            font-size: .9rem;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                padding-top: 58px;
+            }
+
+            .grid { grid-template-columns: 1fr; }
+
+            .project { padding: 34px 25px; }
         }
 
         @media (max-width: 600px) {
-            .hero { padding-top: 45px; }
-            .project { padding: 22px; }
+            .nav, .hero, main { padding-left: 20px; padding-right: 20px; }
+
+            h1 { font-size: 2.65rem; }
+
+            .intro {
+                font-size: 1.04rem;
+                line-height: 1.72;
+            }
+
+            .research-line {
+                gap: 4px;
+            }
+
+            .research-icon {
+                width: 46px;
+                height: 46px;
+            }
+
+            .research-step span {
+                display: none;
+            }
+
+            .project {
+                border-radius: 18px;
+                padding: 29px 20px;
+            }
+
+            .project h2 { font-size: 2rem; }
+
+            .map {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 5px;
+            }
+
+            .map-step { min-width: 82px; }
+            .map-arrow { min-width: 12px; }
         }
     </style>
 </head>
@@ -129,18 +472,49 @@
     </nav>
 
     <header class="hero">
-        <div class="eyebrow">UX Research · HCI · Human-Centered AI</div>
-        <h1>Understanding how people learn and interact with Software Systems & AI.</h1>
-        <p class="intro">
-            I am an MSCS student at Georgia Tech exploring UX research and human-centered AI.
-            I am particularly interested in research at the intersection of <strong>AI, HCI, 
-            learning, and interactive systems</strong>. I enjoy understanding how people 
-            interpret and use complex technologies, and translating observations into 
-            actionable improvements.
-            
-            My current work focuses on understanding how people experience
-            technology through qualitative research, playtesting, and evaluation.
-        </p>
+        <div class="hero-copy">
+            <div class="eyebrow">UX Research · HCI · Human-Centered AI</div>
+            <h1>Understanding how people learn and interact with Software Systems & AI.</h1>
+            <p class="intro">
+                I am an MSCS student at Georgia Tech exploring UX research and human-centered AI.
+                I am particularly interested in research at the intersection of <strong>AI, HCI, 
+                learning, and interactive systems</strong>. I enjoy understanding how people 
+                interpret and use complex technologies, and translating observations into 
+                actionable improvements.
+
+                My current work focuses on understanding how people experience
+                technology through qualitative research, playtesting, and evaluation.
+            </p>
+            <div class="scroll-cue">
+                <span class="scroll-dot"></span>
+                Explore my research
+            </div>
+        </div>
+
+        <div class="research-graphic" aria-hidden="true">
+            <div class="research-line">
+                <div class="research-step">
+                    <div class="research-icon">◉</div>
+                    <strong>Observe</strong>
+                    <span>people & context</span>
+                </div>
+                <div class="research-step">
+                    <div class="research-icon">?</div>
+                    <strong>Ask</strong>
+                    <span>questions & listen</span>
+                </div>
+                <div class="research-step">
+                    <div class="research-icon">◌</div>
+                    <strong>Understand</strong>
+                    <span>patterns & needs</span>
+                </div>
+                <div class="research-step">
+                    <div class="research-icon">✦</div>
+                    <strong>Improve</strong>
+                    <span>insights → action</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -188,6 +562,36 @@
                             Understanding both the digital experience and whether
                             the games support learning of the targeted AI concept.
                         </p>
+                    </div>
+                </div>
+
+                <div class="research-map" aria-label="Research process">
+                    <div class="map-title">Research process</div>
+                    <div class="map">
+                        <div class="map-step">
+                            <div class="map-circle">01</div>
+                            <strong>Activity</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">02</div>
+                            <strong>Playtest</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">03</div>
+                            <strong>Feedback</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">04</div>
+                            <strong>Assessment</strong>
+                        </div>
+                        <div class="map-arrow">→</div>
+                        <div class="map-step">
+                            <div class="map-circle">05</div>
+                            <strong>Insights</strong>
+                        </div>
                     </div>
                 </div>
 
