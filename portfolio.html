@@ -387,6 +387,26 @@
             color: #435361;
         }
 
+
+        /* Project 4 visuals */
+        .project-four { background: radial-gradient(circle at 94% 5%, #eef9ff 0, transparent 28%), white; }
+        .project-four .impact-banner { display:flex; align-items:center; gap:16px; margin:28px 0 34px; padding:18px 20px; border:1px solid #cfe7f7; border-radius:16px; background:linear-gradient(135deg,#f7fcff,#eaf7ff); }
+        .project-four .impact-mark { width:44px; height:44px; flex:0 0 44px; border-radius:50%; background:white; border:1px solid #b9dcef; display:flex; align-items:center; justify-content:center; color:#4f96c9; font-weight:800; box-shadow:0 7px 18px rgba(53,119,168,.08); }
+        .project-four .impact-banner span { display:block; color:#73a8c9; text-transform:uppercase; letter-spacing:.09em; font-size:.65rem; font-weight:800; }
+        .project-four .impact-banner strong { display:block; color:#356f99; font-size:.95rem; margin-top:2px; }
+        .visual-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:16px; margin:34px 0 46px; }
+        .visual-card { margin:0; border-radius:18px; overflow:hidden; border:1px solid #d6eaf7; background:#f7fbfe; box-shadow:0 14px 34px rgba(53,119,168,.08); }
+        .visual-card img { display:block; width:100%; height:auto; }
+        .visual-card figcaption { padding:12px 15px 14px; font-size:.76rem; color:#62788a; background:white; }
+        .visual-card figcaption strong { color:#3c7197; }
+        .visual-row { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:20px 0 42px; }
+        .design-principles { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin:24px 0 42px; }
+        .design-principles > div { padding:19px; border-radius:15px; background:linear-gradient(145deg,#f8fcff,#edf7ff); border:1px solid #d9ebf7; }
+        .design-principles span { color:#72afe0; font-size:.68rem; font-weight:800; letter-spacing:.08em; }
+        .design-principles h4 { margin:7px 0 5px; color:#2f6f9d; font-size:.94rem; }
+        .design-principles p { margin:0; font-size:.86rem; }
+        @media (max-width:760px) { .visual-grid,.visual-row { grid-template-columns:1fr; } .design-principles { grid-template-columns:1fr; } }
+
         .back {
             display: inline-flex;
             align-items: center;
@@ -948,6 +968,15 @@
                     <span class="timeline-award">★ 1st Prize · Microsoft Global Hackathon Topic Challenge</span>
                 </div>
             </div>
+
+            <div class="timeline-item">
+                <div class="timeline-circle">04</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">Co-founder · Lead UX & Developer</div>
+                    <h3><a class="timeline-project-link" href="#project-4">MeViKu Mental Health</a></h3>
+                    <p>Designing and testing a personalized mental-health support app around real student needs, therapeutic activities, and empathetic AI interaction.</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -1461,6 +1490,56 @@
                 </p>
             </article>
         </section>
+
+        <article class="project project-four" id="project-4">
+                <div class="eyebrow">Co-founded · Mental Health Technology</div>
+                <h2>MeViKu Mental Health</h2>
+                <p>
+                    Designing and building a personalized mental-health support experience that combined
+                    guided healing activities, access to therapists, and an AI chatbot designed to respond
+                    sensitively to users in distress.
+                </p>
+                <div>
+                    <span class="tag">UX Design</span>
+                    <span class="tag">Human-AI Interaction</span>
+                    <span class="tag">User Testing</span>
+                    <span class="tag">Mental Health Technology</span>
+                    <span class="tag">Conversational Design</span>
+                    <span class="tag">Co-founder</span>
+                </div>
+                <div class="impact-banner">
+                    <div class="impact-mark">★</div>
+                    <div>
+                        <span>Startup milestone</span>
+                        <strong>Won ₹500K seed funding (≈ US$5.2K) from Cisco ThingQbator</strong>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div><h3>My role</h3><p>Co-founder and lead UX & developer. I also led UX decisions around the app's experience, therapeutic content, chatbot behavior, and what users should track.</p></div>
+                    <div><h3>Users</h3><p>We tested the app with college students, including real counseling sessions conducted through the platform, and used their feedback to refine the experience.</p></div>
+                    <div><h3>Focus</h3><p>Making support feel approachable and personalized while connecting users with structured CBT-based activities and professional mental-health support.</p></div>
+                </div>
+                <div class="visual-grid">
+                    <figure class="visual-card"><img src="assets/serenity-overview.jpg" alt="Mental health app concept showing personalized wellness and healing screens"><figcaption><strong>Personalized support.</strong> The experience was designed around how a user was feeling, rather than presenting a one-size-fits-all set of activities.</figcaption></figure>
+                    <figure class="visual-card"><img src="assets/serenity-chatbot.jpg" alt="Mental health chatbot interface concept"><figcaption><strong>Conversational support.</strong> I helped shape how the chatbot should communicate with users, especially in sensitive situations.</figcaption></figure>
+                </div>
+                <h3>Designing the experience around the user</h3>
+                <p>My contribution went beyond implementing the application. I worked on the UX of the experience and helped decide <strong>which CBT-based activities should be included, how those activities should be presented, how the chatbot should communicate, and which parameters users should be able to track</strong> so that the experience could respond to their needs more meaningfully.</p>
+                <div class="design-principles">
+                    <div><span>01</span><h4>Personalized activities</h4><p>Selected and structured healing activities around users' reported feelings and needs.</p></div>
+                    <div><span>02</span><h4>Empathetic conversation</h4><p>Considered tone, response behavior, and sensitive communication for the AI chatbot.</p></div>
+                    <div><span>03</span><h4>Meaningful tracking</h4><p>Thought through which user-facing parameters could help represent changes in wellbeing over time.</p></div>
+                </div>
+                <h3>From prototype to real-world testing</h3>
+                <p>We did not stop at building a prototype. We tested the experience with college students and gathered feedback on the app's usability and usefulness. The platform was also used for counseling sessions, giving us an opportunity to see how the experience worked in a real interaction rather than only in a demo.</p>
+                <div class="visual-row">
+                    <figure class="visual-card"><img src="assets/serenity-validation.jpg" alt="Customer validation slide showing feedback about the mental health app"><figcaption><strong>Customer validation.</strong> Feedback highlighted the soothing UI, the chatbot's calming behavior, and the usefulness of the mood board.</figcaption></figure>
+                    <figure class="visual-card"><img src="assets/serenity-therapy-session.jpg" alt="Counseling session conducted through the mental health app"><figcaption><strong>Real-world use.</strong> A counseling session was conducted through the app as part of testing the experience.</figcaption></figure>
+                </div>
+                <h3>What I learned</h3>
+                <p>This project was an early experience in treating a technical product as a human experience: deciding what users should see and do, translating therapeutic ideas into an interaction, thinking carefully about conversational behavior, and validating the result with real users.</p>
+                <p class="note">This project was developed as an early-stage mental-health technology startup. The content shown here is limited to publicly shareable project materials and high-level design decisions; no private participant information or sensitive counseling data is included.</p>
+        </article>
 
         <a class="back" href="index.html">← Back to main site</a>
     </main>
