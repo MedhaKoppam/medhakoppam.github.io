@@ -546,6 +546,300 @@
             .hci-cards > div:last-child { grid-column: auto; }
         }
 
+
+        /* Project 3 visuals */
+        .project-three {
+            background:
+                radial-gradient(circle at 8% 6%, #f1faff 0, transparent 27%),
+                white;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 28px 0;
+            padding: 17px 19px;
+            border: 1px solid #cfe7f7;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f7fcff, #eaf7ff);
+        }
+
+        .achievement-mark {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #b9dcef;
+            color: #5c9fd0;
+            font-size: 1.15rem;
+            box-shadow: 0 7px 18px rgba(53,119,168,.09);
+        }
+
+        .achievement span {
+            display: block;
+            color: #73a8c9;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+            font-size: .66rem;
+            font-weight: 800;
+        }
+
+        .achievement strong {
+            display: block;
+            color: #356f99;
+            font-size: .94rem;
+            margin-top: 2px;
+        }
+
+        .achievement p {
+            margin: 2px 0 0;
+            font-size: .78rem;
+            color: #667e8e;
+        }
+
+        .developer-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 8px;
+            margin: 30px 0 44px;
+            overflow-x: auto;
+            padding: 4px 2px 12px;
+        }
+
+        .dev-step {
+            min-width: 132px;
+            flex: 1;
+            padding: 15px;
+            border-radius: 13px;
+            border: 1px solid #d8ebf7;
+            background: #f8fcff;
+        }
+
+        .dev-step span {
+            display: block;
+            color: #78afe0;
+            font-size: .67rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            margin-bottom: 7px;
+        }
+
+        .dev-step strong {
+            display: block;
+            color: #376f97;
+            font-size: .8rem;
+        }
+
+        .dev-step small {
+            display: block;
+            color: #748795;
+            font-size: .68rem;
+            line-height: 1.45;
+            margin-top: 5px;
+        }
+
+        .dev-arrow {
+            align-self: center;
+            color: #8ebde0;
+            font-size: 1.1rem;
+            flex: 0 0 auto;
+        }
+
+        .verification-panel {
+            margin: 30px 0 45px;
+            padding: 22px;
+            border-radius: 17px;
+            background: #f5fbff;
+            border: 1px solid #d6ebf8;
+        }
+
+        .verification-title {
+            color: #376f97;
+            font-weight: 750;
+            font-size: .95rem;
+            margin-bottom: 15px;
+        }
+
+        .verification-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .verification-items > div {
+            padding: 14px;
+            border-radius: 12px;
+            background: white;
+            border: 1px solid #e0eff8;
+        }
+
+        .verification-items span {
+            display: block;
+            color: #65a6d3;
+            font-weight: 800;
+            font-size: .9rem;
+        }
+
+        .verification-items strong {
+            display: block;
+            color: #467b9d;
+            font-size: .8rem;
+            margin-top: 3px;
+        }
+
+        .verification-items p {
+            font-size: .72rem;
+            line-height: 1.45;
+            margin: 4px 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .verification-items {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement {
+                align-items: flex-start;
+            }
+        }
+
+
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
+        }
+
+        .timeline-project-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .timeline-project-link:hover {
+            color: #5c9fd0;
+            text-decoration: none;
+        }
+
+        /* Project timeline */
+        .project-timeline {
+            position: relative;
+            max-width: 780px;
+            margin-top: 42px;
+            padding: 8px 0 6px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 26px;
+            top: 34px;
+            bottom: 34px;
+            width: 2px;
+            background: linear-gradient(180deg, #b9dcf5, #72b1e3, #b9dcf5);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 54px 1fr;
+            gap: 20px;
+            align-items: start;
+            margin-bottom: 26px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-circle {
+            width: 52px;
+            height: 52px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid #9ecdec;
+            color: #4f94c6;
+            font-size: .72rem;
+            font-weight: 800;
+            box-shadow: 0 8px 22px rgba(53,119,168,.10);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            padding: 4px 0 10px;
+        }
+
+        .timeline-meta {
+            color: #70a5c8;
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 5px;
+            color: #2f6f9d;
+            font-size: 1rem;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: #596d7b;
+            font-size: .88rem;
+            line-height: 1.55;
+            max-width: 650px;
+        }
+
+        .timeline-award {
+            display: inline-block;
+            margin-top: 9px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: #edf8ff;
+            border: 1px solid #cfe7f7;
+            color: #4d8ab5;
+            font-size: .68rem;
+            font-weight: 750;
+        }
+
+        @media (max-width: 600px) {
+            .timeline-item {
+                grid-template-columns: 46px 1fr;
+                gap: 14px;
+            }
+
+            .timeline-circle {
+                width: 46px;
+                height: 46px;
+            }
+
+            .timeline-line {
+                left: 22px;
+            }
+
+            .timeline-meta {
+                font-size: .62rem;
+            }
+
+            .timeline-content h3 {
+                font-size: .92rem;
+            }
+
+            .timeline-content p {
+                font-size: .82rem;
+            }
+        }
+
         @media (max-width: 800px) {
             .hero {
                 padding-top: 58px;
@@ -609,7 +903,7 @@
             <div class="eyebrow">UX Research · HCI · Human-Centered AI</div>
             <h1>Understanding how people learn and interact with Software Systems & AI.</h1>
             <p class="intro">
-                I am an MSCS student at Georgia Tech exploring UX research and human-centered AI.
+                I am an MSCS student at Georgia Tech, specializing in HCI, exploring UX research and human-centered AI.
                 I am particularly interested in research at the intersection of <strong>AI, HCI, 
                 learning, and interactive systems</strong>. I enjoy understanding how people 
                 interpret and use complex technologies, and translating observations into 
@@ -624,27 +918,34 @@
             </div>
         </div>
 
-        <div class="research-graphic" aria-hidden="true">
-            <div class="research-line">
-                <div class="research-step">
-                    <div class="research-icon">◉</div>
-                    <strong>Observe</strong>
-                    <span>people & context</span>
+        <div class="project-timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-circle">01</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">Play and Learn Lab · Georgia Tech</div>
+                    <h3><a class="timeline-project-link" href="#project-1">Co-Designed AI Games</a></h3>
+                    <p>Playtesting AI learning games with high-school students to understand what makes an experience both engaging and effective for learning.</p>
                 </div>
-                <div class="research-step">
-                    <div class="research-icon">?</div>
-                    <strong>Ask</strong>
-                    <span>questions & listen</span>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-circle">02</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">Microsoft Research</div>
+                    <h3><a class="timeline-project-link" href="#project-2">Natural-Language Interfaces for Complex Developer Tools</a></h3>
+                    <p>Turning complex workflow construction into an iterative conversation where developers can generate, execute, and refine transformations.</p>
                 </div>
-                <div class="research-step">
-                    <div class="research-icon">◌</div>
-                    <strong>Understand</strong>
-                    <span>patterns & needs</span>
-                </div>
-                <div class="research-step">
-                    <div class="research-icon">✦</div>
-                    <strong>Improve</strong>
-                    <span>insights → action</span>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-circle">03</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">Microsoft Research</div>
+                    <h3><a class="timeline-project-link" href="#project-3">AI-Assisted Code Review & Testing</a></h3>
+                    <p>Designing Git-integrated experiences that make AI security findings and generated tests actionable, understandable, and easier to verify.</p>
+                    <span class="timeline-award">★ 1st Prize · Microsoft Global Hackathon Topic Challenge</span>
                 </div>
             </div>
         </div>
@@ -654,7 +955,7 @@
         <section>
             <h2>Selected Work</h2>
 
-            <article class="project">
+            <article class="project" id="project-1">
                 <div class="eyebrow">Ongoing Research · Play and Learn Lab · Georgia Tech</div>
                 <h2>Co-Designed AI Games</h2>
 
@@ -898,10 +1199,9 @@
                     The interface also supported an iterative interaction loop:
                     users could generate a workflow, execute it, adjust runtime
                     parameters, and continue chatting to refine the workflow or
-                    make changes. Direct actions within the chat interface made
-                    common operations such as <strong>executing the workflow and
-                    tweaking runtime parameters</strong> accessible without
-                    requiring users to navigate through the underlying system.
+                    make changes. As part of the interface, we added direct-action UI elements within the
+                    chat experience that allowed developers to <strong>execute workflows
+                    and modify runtime parameters</strong> without leaving the conversation.
                 </p>
 
                 <div class="intent-flow">
@@ -948,7 +1248,7 @@
                     <li>Developed the interface for presenting generated workflows.</li>
                     <li>Designed ways for users to provide and modify required parameters.</li>
                     <li>Implemented the interface and underlying functionality.</li>
-                    <li>Added direct actions to the chat interface for executing workflows and modifying runtime parameters.</li>
+                    <li>Added direct-action UI controls to the chat interface for executing workflows and modifying runtime parameters.</li>
                     <li>Enabled users to iteratively refine their workflow through conversation and continue execution without leaving the interface.</li>
                 </ul>
 
@@ -986,6 +1286,178 @@
                     Because the work involved internal systems and unpublished research,
                     specific project names, implementation details, and other proprietary
                     information are intentionally omitted.
+                </p>
+            </article>
+
+            <article class="project project-three" id="project-3">
+                <div class="eyebrow">Industry Projects · Microsoft Research</div>
+                <h2>AI-Assisted Code Review & Testing in Git-Based Workflows</h2>
+
+                <p>
+                    Designed and implemented Git-integrated interfaces that use AI to
+                    identify security vulnerabilities, suggest actionable fixes, and
+                    generate unit tests for code changes—while giving developers clear
+                    feedback and ways to verify the resulting changes.
+                </p>
+
+                <div>
+                    <span class="tag">HCI</span>
+                    <span class="tag">Developer Experience</span>
+                    <span class="tag">Human-AI Interaction</span>
+                    <span class="tag">Interaction Design</span>
+                    <span class="tag">Software Engineering</span>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h3>My role</h3>
+                        <p>
+                            Designed and implemented parts of the user-facing experience
+                            for AI-assisted code quality workflows, thinking about how
+                            developers encounter findings, understand them, take action,
+                            and verify the result.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Context</h3>
+                        <p>
+                            The work was developed through two hackathon projects and
+                            explored how AI-generated code analysis and changes could
+                            fit naturally into existing Git-based workflows.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Focus</h3>
+                        <p>
+                            Making AI-generated findings and changes transparent,
+                            actionable, and convincing to developers without requiring
+                            them to leave the workflow they already use.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>01 · AI-Assisted Security Review</h3>
+                <p>
+                    For a Microsoft Global Hackathon project, we built an interface
+                    that checked committed code for security vulnerabilities and
+                    surfaced findings directly within the Git-based workflow.
+                </p>
+
+                <p>
+                    We designed developer-facing comments that explained what was
+                    happening in an understandable way. As part of the Git interface,
+                    we added actionable UI controls alongside vulnerability findings,
+                    allowing developers to apply fixes, create a new commit, and push
+                    the updated code directly from the workflow.
+                </p>
+
+                <div class="achievement">
+                    <div class="achievement-mark">★</div>
+                    <div>
+                        <span>Recognition</span>
+                        <strong>1st Prize · Microsoft Global Hackathon Topic Challenge</strong>
+                        <p>
+                            Microsoft Global Hackathon — Supercharging Code
+                            Transformations using LLM
+                        </p>
+                    </div>
+                </div>
+
+                <div class="developer-flow">
+                    <div class="dev-step">
+                        <span>01</span>
+                        <strong>Commit</strong>
+                        <small>Code enters the Git workflow.</small>
+                    </div>
+                    <div class="dev-arrow">→</div>
+                    <div class="dev-step">
+                        <span>02</span>
+                        <strong>Analyze</strong>
+                        <small>Security issues are identified.</small>
+                    </div>
+                    <div class="dev-arrow">→</div>
+                    <div class="dev-step">
+                        <span>03</span>
+                        <strong>Explain</strong>
+                        <small>Findings appear as understandable comments.</small>
+                    </div>
+                    <div class="dev-arrow">→</div>
+                    <div class="dev-step">
+                        <span>04</span>
+                        <strong>Act</strong>
+                        <small>Direct actions help fix the issue and push a new commit.</small>
+                    </div>
+                </div>
+
+                <h3>02 · AI-Assisted Unit Test Generation</h3>
+                <p>
+                    We extended the same idea to unit testing within the Git-based
+                    development workflow. The system checked for unit test files
+                    and could generate tests when they were missing. When tests
+                    already existed, it could also generate tests based on the
+                    specific code modifications made in the change.
+                </p>
+
+                <p>
+                    We designed the experience so developers could see the resulting
+                    test execution in the build pipeline, including whether the build
+                    passed and how the generated tests performed. The interface was
+                    intended to make the quality of AI-generated tests easier to
+                    evaluate rather than asking developers to simply trust the output.
+                </p>
+
+                <div class="verification-panel">
+                    <div class="verification-title">Making AI output verifiable</div>
+                    <div class="verification-items">
+                        <div>
+                            <span>✓</span>
+                            <strong>Tests run</strong>
+                            <p>Show that generated tests actually execute.</p>
+                        </div>
+                        <div>
+                            <span>✓</span>
+                            <strong>Build status</strong>
+                            <p>Make the outcome visible within the pipeline.</p>
+                        </div>
+                        <div>
+                            <span>✓</span>
+                            <strong>Quality signals</strong>
+                            <p>Give developers information they can use to assess the result.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>HCI perspective</h3>
+                <div class="hci-cards">
+                    <div>
+                        <span>01</span>
+                        <h4>Fit the Existing Workflow</h4>
+                        <p>Bring AI assistance into the Git and build experiences developers already use instead of creating a separate destination.</p>
+                    </div>
+                    <div>
+                        <span>02</span>
+                        <h4>Actionable Feedback</h4>
+                        <p>Pair explanations with direct actions so developers can move from understanding an issue to addressing it.</p>
+                    </div>
+                    <div>
+                        <span>03</span>
+                        <h4>Trust & Transparency</h4>
+                        <p>Show what the system found, what it changed, and how the resulting tests performed so users can evaluate AI output.</p>
+                    </div>
+                    <div>
+                        <span>04</span>
+                        <h4>Human-AI Interaction</h4>
+                        <p>Design AI assistance as part of an iterative developer workflow rather than as an opaque one-shot generation system.</p>
+                    </div>
+                </div>
+
+                <p class="note">
+                    This work was conducted as part of my work at Microsoft Research.
+                    Because the projects involved internal systems and unpublished
+                    research, specific project names, implementation details, and
+                    other proprietary information are intentionally omitted.
                 </p>
             </article>
         </section>
